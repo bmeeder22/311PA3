@@ -38,15 +38,11 @@ public class DynamicProgramming {
 				
 				M[i][j] += Math.min(Math.min(left, down), right); //Select the lowest path out of the last three. 
 			}
-//			System.out.println();
-//			printMatrix(M);
-//			System.out.println();
 		}
 		
 		
 		//Find the lowest path starting position
 		int startCol = 0;
-		//System.out.println(M[0].length);
 		for(int i=0; i<M[0].length;i++)
 		{
 			if(M[0][startCol] >= M[0][i])
@@ -97,7 +93,7 @@ public class DynamicProgramming {
         int row = y.length();
         int col = x.length();
         String out = "";
-        
+
         while(row > 0 && col > 0) {
             int diag = (D[row-1][col-1] + scoreMatrix[row-1][col-1]);
             int vert = D[row-1][col] + placeholderScore;

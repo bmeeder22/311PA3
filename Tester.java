@@ -20,10 +20,10 @@ public class Tester {
 //					System.out.println(coords.get(i) + " ) ");
 //				}
 //		
-//		ImageProcessor ip = new ImageProcessor("arch.jpg");
-//		ip.picture.show();
-//		Picture newPic = ip.reduceWidth(.726);
-//		newPic.show();
+		ImageProcessor ip = new ImageProcessor("images/castle(1024 by 694).jpg");
+		ip.picture.show();
+		Picture newPic = ip.reduceWidth(.726);
+		newPic.show();
 
         System.out.println(DynamicProgramming.stringAlignment("try_this", "test"));
         System.out.println(DynamicProgramming.stringAlignment("acdtest", "test"));
