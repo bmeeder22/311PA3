@@ -93,9 +93,10 @@ public class ImageProcessor {
 		for(int i=0; i<startPicture.height();i++)
 		{
 			boolean found = false;
+			int pixelPlacer = 0;
 			for(int j=0; j<startPicture.width();j++)
 			{
-
+				
 				//System.out.println("i " + i + " , j " + j);
 				if(pixel_Remove.size() >0 && i == pixel_Remove.get(0) && j == pixel_Remove.get(1))
 				{
@@ -107,16 +108,21 @@ public class ImageProcessor {
 				else
 				{
 					if(found)
-						endPicture.set((j-1), i, startPicture.get((j), i));
+						endPicture.set(pixelPlacer, i, startPicture.get((j), i));
 					else
 					{
 //						System.out.println("i = " + i + " j = " + j + " " + " pixel to be removed in col, " + pixel_Remove.get(0) + " " + pixel_Remove.get(1));
 //						System.out.println("old picture width " + picture.width() + "old picture height " + picture.height());
 //						System.out.println("new picture width " + endPicture.width() + "new picture height " + endPicture.height());
-						endPicture.set(j, i, startPicture.get(j, i));
+						endPicture.set(pixelPlacer, i, startPicture.get(j, i));
 					}
+					
+//					if(endPicture.width() == 273)
+//						System.out.print(i + " " + pixelPlacer + ", ");
+					pixelPlacer++;
 				}
 			}
+	//		System.out.println();
 		}
 				
 		
